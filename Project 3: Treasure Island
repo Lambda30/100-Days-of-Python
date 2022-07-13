@@ -1,0 +1,198 @@
+print('''
+*******************************************************************************
+          |                   |                  |                     |
+ _________|________________.=""_;=.______________|_____________________|_______
+|                   |  ,-"_,=""     `"=.|                  |
+|___________________|__"=._o`"-._        `"=.______________|___________________
+          |                `"=._o`"=._      _`"=._                     |
+ _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
+|                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
+|___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
+          |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
+ _________|___________| ;`-.o`"=._; ." ` '`."\` . "-._ /_______________|_______
+|                   | |o;    `"-.o`"=._``  '` " ,__.--o;   |
+|___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
+____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
+/______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
+____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
+/______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
+____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
+/______/______/______/______/______/______/______/______/______/______/_____ /
+*******************************************************************************
+''')
+
+#https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Treasure%20Island%20Conditional.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1oDe4ehjWZipYRsVfeAx2HyB7LCQ8_Fvi%26export%3Ddownload
+
+#Write your code below this line 👇
+
+print("Welcome to Treasure Island.")
+character = input("Choose your character: Scholar or Warrior.\n")
+
+if character == "Scholar" or character == "scholar":
+	print(
+	    "You are a scholar - a researcher who has traveled to Treasure Island in search of long lost knowledge from the long dead Astorians. You go underground, now entering their dilapidated and booby-trapped ruins -  finding their archives is your goal.\n"
+	)
+	print("Any wrong move could be your end.  Think and type carefully.\n")
+
+	print('''
+        _.-""}
+      / "" ;
+  .-"` __] ',               ___
+  I_ ""__.`-,;             |   |
+    I_.,-"ii"{             !___!
+    | ||  ||  |        ,    | |
+    | ||  ||  |       .;    | |
+    | ||  ||  |       | \   | |
+    | ||  ||  |       |  |  | |
+    | ||  ||  |       |  |  | |   __
+    | ||  ||  |       |  |  | |  |  |
+    | ||  ||  |   ;|  |  |  | |  |  |
+    | ||  ||  |"\_/`,_|  |  | |  |  |  ___.--""`\.
+    | ||  ||  |       |  |\.| |=,|  |""          `,
+    | ||  ||  |       |  |  | |  |  |____________.-+.__
+   _:_!|_,'!__!       |  |  | |_,!  !         __,I   `"|
+  :     |      `-""`,.!__!-,!_!_ '--'`,_,--"""         |
+  |     ;___          `"-.-'    `,_.-'"            _..-'
+   `-._ |   """--,,_     |`""-.--'|         __.--""
+       `"--..__     ""--.|    |   |_,_  _.-'
+               ""--.._   `-,__!_.-' _,""         
+                      ""--,____.--'"
+        \n
+        ''')
+
+	# Floor Cracks
+	print(
+	    "You enter a large dark room, made visible by your torch.  At your first step, the ancient floors start cracking, making you nervous.\n"
+	)
+	floor_cracks = input(
+	    "Do you move across the room, ignoring the cracks, or avoid the cracking grounds by walking along the edges of the room?  Choose: across or avoid.\n"
+	)
+	if floor_cracks == "Across" or floor_cracks == "across":
+		print(
+		    "You\'ve died!  As you ignored the cracks in the floor, the ground gives way and you fall into a deep chasm.  When you body finally collides with the bottom, you barely retain consciousness long enough to recognize that you are broken beyond repair.  You\'ve met an untimely end."
+		)
+	elif floor_cracks == "Avoid" or floor_cracks == "avoid":
+		print(
+		    "You live!  You avoid the danger by walking along the edges of the room, safely making it through.\n"
+		)
+
+		print('''
+                          ___+._______
+                    __-""   --     __"""----._____
+             __.--"" -- ___--+---_____.     __  .+'|
+       _.-'""  __    +:"__   | ._..+"" __    .+'   F
+     J"--.____         __ """""+"         .+'  .J  F
+     J        """""---.___       --   .+'"     F'  F
+      L                   """""--...+'    .J       F
+      L   F"9      --.            |   .   F'      J
+      L   -_J      L_J      F"9   | ;'J    .+J .J J
+      |                     L_J   | F.'  .'| J F' J
+      |        |"""--.__          | '   |""  J    J
+      J   ._   J ;;; |  "L        |   . |-___J    |
+      J   L J  J ;-' |   L        | .'J |_  .'  . |
+      J    ""  J    .---_L  F"9   | F.' | .'   FJ |
+       L       J .-'  __ |  L_J   | '   :'     ' .+
+       L       '--.___   |        |       .J   .'
+       |  F"9         """'        |   .   F' .'
+       |  -_J      F"9            | .'J    .'
+       +__         -_J      F"9   | F.'  .'
+          """--___          L_J   | '  .'   
+                  """---___       |  .'
+                           ""---._|.'
+         \n
+          ''')
+
+		#Trial of academic integrity
+		print(
+		    "You now enter a room with a golden relic on a pedestal.  By your inspection, you can tell that a collector would pay a fortune for such a rarity.  Though it would mean ending your mission for the sake of riches rather than the knowledge you initially set out for, it could be worth it.\n"
+		)
+		trial = input(
+		    "Do you take the relic and leave, or do you return the relic on its pedestal?  Choose: return or take.\n"
+		)
+		if trial == "Take" or trial == "take":
+			print(
+			    "You take the golden relic and leave...or so you attempt to.  No matter your efforts, you can no longer find the exit from the ruins.  It slowly dawns on you that you\'ve been cursed, forever to wander the halls of the long dead civilization, damned to inevitably join them.  You\'ve met an untimely end."
+			)
+		elif trial == "Return" or trial == "return":
+			print(
+			    "You decide to return the golden relic to its pedestal, unwilling to compromise your mission.  Upon placing it back down, a flash of light briefly illuminates the room, and a new passage not seen before is revealed.  You realize that the spirits of old have blessed you to explore further.\n"
+			)
+
+			print('''
+          ___
+         / ,_\    _____
+        /  _)/   /o    \.
+        |  \    /_ `    \__________
+        |   \____ >__,_  \         |
+        |                  ____,   |
+        \,___________     |    \   |
+                   \      (     \  |__
+                    \    \ \     \   _)_
+           __________\/     \     \____/
+          |                ) \.
+          |     _________ ,   |
+          |    /       |      /
+          |   /        |     /
+          |  /_        |    /               %%%% %%%%%
+          |    )       |    \             %%% ,, %%%%%%%%
+          \   /        |    /                (<  ?%%%%
+          |  /         |   /                  ^ .'
+          /_/          |  (_              ___ /(___
+                       |    )            /\   ~  /_\.
+                       \   /           _/\(\_)(_/)\ \_
+                       |  /           /\_/ \  x /  \_/\.
+                  ____ /_/_____       \_/   ) x \   \_/
+                 |_____________|    __//   /==o==\   \\__
+                  ) _________ (____/__/___(   -   \___\__\___________
+                  ||         ||____   ____|      __\ ________   _____
+                  ||         ||    \//    \     /   \_       \//
+                  ||         ||    //\     \   /      \      //\.
+                  ||         ||    \\/      \_/        \     \\/
+                  ||         ||    /\\        \    /   |     /\\.
+                  ||         ||    \//        /   _    |     \//
+                  ||         ||____//\________|        |_____//\______
+                  ||_________||______________/         |______________
+                  )___________(             /\_________\.
+                 |_____________|             / | | \.
+                                             \=/ \=/ .. .
+            \n
+            ''')
+
+			# The statue of the Keeper
+			print(
+			    "You enter a chamber with a statue at the end of it.  Its arms are outstretched, almost as if asking for a hug, or looking for an item.  Knowing this can\'t be by coincidence, you ponder your choices.\n"
+			)
+			keeper = input(
+			    "Should you hug the statue, or examine its hands for hidden mechanisms?  Choose: hug or hands.\n"
+			)
+			if keeper == "Hug" or keeper == "hug":
+				print(
+				    "You lovingly embrace the statue.  It lovingly hugs you back - much too hard.  You are crushed and broken in half from the force and weight of its marble arms.  You've met an untimely end."
+				)
+			elif keeper == "Hands" or keeper == "hands":
+				print(
+				    "You examine the hands of the statue, and realize that its hands can turn clockwise!  Upon doing so, the wall behind the statue moves out of the way, revealing the secret archives!\n"
+				)
+				print(
+				    "Congratulations!  You\'ve survived the obstacles and found the archives of the Astorians!  Your work as a scholar shall go down in history; honor, fame, and the title of Grand Scholar are yours.  You win!"
+				)
+			else:
+				print(
+				    "You fool!  Mispelling your answer results in instant death!  Oh the grammatical horror!"
+				)
+
+		else:
+			print(
+			    "You fool!  Mispelling your answer results in instant death!  Oh the grammatical horror!"
+			)
+
+	else:
+		print(
+		    "You fool!  Mispelling your answer results in instant death!  Oh the grammatical horror!"
+		)
+
+elif character == "Warrior" or character == "warrior":
+	print("This character is not available yet.  Sorry!")
+
+else:
+  print("That's not an option!  Try again.")
