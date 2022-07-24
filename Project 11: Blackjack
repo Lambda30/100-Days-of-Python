@@ -1,0 +1,115 @@
+logo = """
+.------.            _     _            _    _            _    
+|A_  _ |.          | |   | |          | |  (_)          | |   
+|( \/ ).-----.     | |__ | | __ _  ___| | ___  __ _  ___| | __
+| \  /|K /\  |     | '_ \| |/ _` |/ __| |/ / |/ _` |/ __| |/ /
+|  \/ | /  \ |     | |_) | | (_| | (__|   <| | (_| | (__|   < 
+`-----| \  / |     |_.__/|_|\__,_|\___|_|\_\ |\__,_|\___|_|\_\\
+      |  \/ K|                            _/ |                
+      `------'                           |__/           
+"""
+                   
+
+                                      
+     
+
+
+import random
+
+deck = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+
+
+
+
+def initial_draw():
+    player_hand = []
+    computer_hand = []
+    player_hand += [random.choice(deck)]
+    player_hand += [random.choice(deck)]
+    computer_hand += [random.choice(deck)]
+    computer_hand += [random.choice(deck)]
+    return player_hand, computer_hand
+
+
+def score(a):
+    num = 0
+    for index in a:
+        num += index
+    return num
+
+print(art.logo)
+
+# print(player_hand)
+# print(computer_hand)
+
+new_round = True
+player_turn = True
+computer_turn = True
+
+# round begins
+
+while new_round:
+    begin = input("Do you want to play a game of blackjack?  Type 'y' or 'n': ")
+        
+    if begin == "n":
+        new_round = False
+        player_turn = False
+        computer_turn = False
+    else:
+        player_hand, computer_hand = initial_draw()
+    
+    # player turn begin
+    
+    while player_turn:
+        next = True
+        print(f"Your cards: {player_hand}, current score: {score(player_hand)}")
+        print(f"Computer's first card: {computer_hand[0]}")
+    
+    # Player gain more cards when they type y
+    
+        while next:
+            hit = input("Type 'y' to get another card; type 'n' to pass: ")
+            if hit == "n" or score(player_hand) > 21:
+                print(f"Your final hand: {player_hand}, final score: {score(player_hand)}\n")
+                next = False
+                player_turn = False
+                #ends both loops
+            else:
+                player_hand += [random.choice(deck)]
+                print(f"Your cards: {player_hand}, current score: {score(player_hand)}")
+                print(f"Computer's first card: {computer_hand[0]}")
+                if score(player_hand) > 21:
+                    next = False
+                    player_turn = False
+                    print("\nYou bust!")
+    
+    # player turn over
+    # computer turn begin
+
+    while computer_turn:
+        print(f"Computer's cards: {computer_hand}, computer score: {score(computer_hand)}")
+        if score(computer_hand) > score(player_hand):
+            computer_turn = False
+        elif score(computer_hand) < score(player_hand) and score(computer_hand) < 21:
+            computer_hand += [random.choice(deck)]
+        else:
+            computer_turn = False
+
+            
+        
+    
+    
+#### needs more work
+    if score(computer_hand) > score(player_hand) and score(computer_hand) <=21:
+        print("\nComputer wins, you lose.")
+    elif score(computer_hand) == score(player_hand):
+        print("\nThe round is a draw.")
+    else:
+        print("\nYou win, computer loses.")
+
+# next round?
+    question = input("\nWould you like to play again? Type 'y' or 'n'. ")
+    if question == "n":
+        new_round = False
+
+print("\nSee you next time!")
