@@ -1,0 +1,31 @@
+from menu import Menu, MenuItem
+from coffee_maker import CoffeeMaker
+from money_machine import MoneyMachine
+
+# objects used
+my_menu = Menu()
+my_coffee = CoffeeMaker()
+my_money = MoneyMachine()
+# objects used end
+
+coffee_machine = True
+
+while coffee_machine:
+    order_name = input(f"What would you like for a drink? Choose: {my_menu.get_items()}")
+    if order_name == "off":
+        coffee_machine = False
+        print("\nPowering down...")
+    elif order_name == "report":
+        my_coffee.report()
+        my_money.report()
+    elif order_name == "latte" or order_name == "espresso" or order_name == "cappuccino":
+        choice = my_menu.find_drink(order_name)
+        # print(my_menu.menu[1].ingredients)
+        # print(choice.name, choice.ingredients)
+        inventory = my_coffee.is_resource_sufficient(choice)
+        if inventory:
+            enough_money = my_money.make_payment(choice.cost)
+            if enough_money:
+                my_coffee.make_coffee(choice)
+    else:
+        choice = my_menu.find_drink(order_name)
